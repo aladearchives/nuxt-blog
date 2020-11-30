@@ -1,18 +1,27 @@
 <template>
-  <div class="post-page">
-    <PostList />
+  <div class="posts-page">
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
-import PostList from "../../components/Posts/PostList";
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
-    PostList,
+    PostList
   },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
+  }
+  // created() {
+  //   this.$store.dispatch('setPosts', this.loadedPosts)
+  // }
 };
 </script>
+
 
 <style scoped>
 .posts-page {
@@ -20,5 +29,4 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
 </style>

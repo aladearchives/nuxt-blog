@@ -1,20 +1,14 @@
 <template>
-     <section class="featured-posts">
-      <PostPreview
-        id="1"
-        :isAdmin='isAdmin'
-        thumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png"
-        title="iPhone Photos"
-        previewText="Hey guys, I've been feeling inspired"
-      />
-      <PostPreview
-        id="2"
-        :isAdmin='isAdmin'
-        thumbnail="https://cdn5.vectorstock.com/i/1000x1000/21/69/single-cartoon-diary-on-white-background-vector-29562169.jpg"
-        title="Dear Dairy"
-        previewText="Hey guys, welcome to another episode"
-      />
-    </section>
+  <section class="post-list">
+    <PostPreview
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
+      :is-admin="isAdmin"
+      :thumbnail="post.thumbnail"
+      :title="post.title"
+      :previewText="post.previewText" />
+  </section>
 </template>
 
 <script>
@@ -25,17 +19,22 @@ export default {
     PostPreview
   },
   props: {
-      isAdmin: {
-          type: Boolean,
-          default: false
-      }
+    isAdmin: {
+      type: Boolean,
+      default: false
+    },
+    posts: {
+      type: Array,
+      required: true
+    }
   }
 }
 </script>
 
+
 <style scoped>
 
-.featured-posts {
+.post-list {
   display: flex;
   padding: 20px;
   box-sizing: border-box;
@@ -44,3 +43,4 @@ export default {
   justify-content: center;
 }
 </style>
+

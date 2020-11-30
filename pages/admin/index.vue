@@ -1,25 +1,25 @@
 <template>
-    <div class="admin-page">
-        <section class="new-post">
-            <AppButton @click="$router.push('admin/new-post')">Create Post</AppButton>
-        </section>
-        <section class="existing-posts">
-            <h1>Existing Posts</h1>
-            <PostList isAdmin />
-        </section>
-    </div>
+  <div class="admin-page">
+    <section class="new-post">
+      <AppButton @click="$router.push('/admin/new-post')">Create Post</AppButton>
+    </section>
+    <section class="existing-posts">
+      <h1>Existing Posts</h1>
+      <PostList isAdmin />
+    </section>
+  </div>
 </template>
 
 <script>
-import PostList from '../../components/Posts/PostList';
-import AppButton from '../../components/UI/AppButton';
+import PostList from '@/components/Posts/PostList'
+import AppButton from '@/components/UI/AppButton'
 
 export default {
-    layout: 'admin', 
-    components: {
-        PostList,
-        AppButton
-    }
+  layout: 'admin',
+  components: {
+    PostList,
+    AppButton
+  }
 }
 </script>
 
@@ -37,15 +37,5 @@ export default {
 .existing-posts h1 {
   text-align: center;
 }
-
-button {
-    padding: 15px;
-    border-radius: 3px;
-    background-color: black;
-    color: #ccc;
-    border: 0;
-}
-button:hover {
-    color: red;
-}
 </style>
+

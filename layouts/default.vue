@@ -1,34 +1,36 @@
 <template>
   <div>
-    <TheHeader @sidenavtoggle="displaySideNav = !displaySideNav"/>
-    <TheSideNav 
-    :show="displaySideNav"
-    @close="displaySideNav = false"/>
-    <Nuxt />
+    <TheHeader @sidenavToggle="displaySidenav = !displaySidenav" />
+    <TheSidenav
+      :show="displaySidenav"
+      @close="displaySidenav = false" />
+    <nuxt/>
   </div>
 </template>
 
 <script>
-import TheHeader from '../components/Navigation/TheHeader'
-import TheSideNav from '../components/Navigation/TheSideNav'
+import TheHeader from '@/components/Navigation/TheHeader'
+import TheSidenav from '@/components/Navigation/TheSidenav'
 
 export default {
   components: {
     TheHeader,
-    TheSideNav
+    TheSidenav
   },
   data() {
     return {
-      displaySideNav: false
+      displaySidenav: false
     }
   }
 }
 </script>
 
+
 <style>
 html {
   font-family: 'Open Sans', sans-serif;
 }
+
 body {
   margin: 0;
 }
