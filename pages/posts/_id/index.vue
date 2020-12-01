@@ -19,11 +19,11 @@ import axios from 'axios';
 export default {
   asyncData(context, callback) {
     return axios.get('https://nuxt-blog-78be0.firebaseio.com/posts' + context.params.id + '.json')
-    .then(res => {
-      return {
-        loadedPost: res.data
-      }
-    })
+          .then((res) => {
+        return {
+          loadedPost: {...res.data, id: context.params.postId},
+        };
+      })
     .catch(e => context.error(e))
   }
 };
