@@ -53,6 +53,12 @@ export default {
   background-color: white;
   width: 90%;
 }
+.post-thumbnail {
+  height: 300px;
+}
+.post-content {
+  height: 150px;
+}
 
 a {
   text-decoration: none;
