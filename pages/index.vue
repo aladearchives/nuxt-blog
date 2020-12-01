@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
     <section class="intro">
-      <h1>Things that make me think</h1>
+      <h1>Things that Interest me</h1>
     </section>
     <PostList :posts="loadedPosts" />
   </div>
