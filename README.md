@@ -1,6 +1,6 @@
-# nuxt-course
+# nuxt-blog
 
-> Nuxt.js course for Udemy
+Nuxt.js blog with Vue
 
 ## Build Setup
 
