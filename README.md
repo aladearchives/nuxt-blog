@@ -1,4 +1,4 @@
-# nuxt-blog
+# nuxt-blog 
 
 Nuxt.js blog with Vue
 
